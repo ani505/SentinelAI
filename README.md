@@ -33,12 +33,23 @@ SentinelAI/
 │   ├── blockchain/
 │   │   └── web3_handler.py      # Ethereum/Web3 integration
 │   └── requirements.txt
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.jsx              # Main React component
+│   │   ├── index.js             # Entry point
+│   │   └── App.css              # Styles
+│   └── package.json
+├── blockchain/
+│   └── contracts/
+│       └── SentinelAI.sol       # Solidity smart contract
 └── .env.example
 ```
 
 ## Quick Start
 
-### Backend
+### 1. Backend
 
 ```bash
 cd backend
@@ -53,8 +64,18 @@ cp ../.env.example .env
 python api_enhanced.py
 ```
 
-Server runs at `http://localhost:8000`
-Interactive API docs at `http://localhost:8000/docs`
+* Server runs at `http://localhost:8000`
+* Interactive API docs at `http://localhost:8000/docs`
+
+### 2. Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+* Opens at `http://localhost:3000`
 
 ## Configuration
 
@@ -139,8 +160,8 @@ Leave `SEPOLIA_RPC_URL` and `PRIVATE_KEY` blank. The system runs in local-only m
 
 ## Smart Contract
 
-The Solidity smart contract (`SentinelAI.sol`, developed by Srijoni Ghosh) handles on-chain model anchoring on the Sepolia network. If on-chain verification is desired, deploy the Solidity contract and configure the address under `CONTRACT_ADDRESS` in your `.env` file.
+`blockchain/contracts/SentinelAI.sol` - deploy this to Sepolia if you want on-chain anchoring. After deployment, put the contract address in `CONTRACT_ADDRESS` in your `.env`.
 
 ## Tech Stack
 
-Python 3.8+, FastAPI, SQLite, Web3.py, Ethereum Sepolia
+Python 3.8+, FastAPI, SQLite, Web3.py, React 18, Ethereum Sepolia
