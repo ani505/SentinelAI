@@ -4,6 +4,11 @@ AI Model Integrity Verification on Blockchain
 
 SentinelAI lets you register AI model files and verify they haven't been tampered with. Each model gets a SHA-256 hash that can optionally be anchored to the Ethereum Sepolia testnet. If someone modifies the model file later, the hash won't match and the system flags it.
 
+## Contributors & Attribution
+
+* **Backend & Core System**: Developed by **Aniruddh Viswarajan**
+* **Frontend & Blockchain Contracts**: Developed by **Srijoni Ghosh**
+
 ## Features
 
 - **Register models** with metadata (name, description, owner, tags)
@@ -28,17 +33,6 @@ SentinelAI/
 │   ├── blockchain/
 │   │   └── web3_handler.py      # Ethereum/Web3 integration
 │   └── requirements.txt
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.jsx              # Main React component
-│   │   ├── index.js             # Entry point
-│   │   └── App.css              # Styles
-│   └── package.json
-├── blockchain/
-│   └── contracts/
-│       └── SentinelAI.sol       # Solidity smart contract
 └── .env.example
 ```
 
@@ -61,16 +55,6 @@ python api_enhanced.py
 
 Server runs at `http://localhost:8000`
 Interactive API docs at `http://localhost:8000/docs`
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-Opens at `http://localhost:3000`
 
 ## Configuration
 
@@ -155,10 +139,8 @@ Leave `SEPOLIA_RPC_URL` and `PRIVATE_KEY` blank. The system runs in local-only m
 
 ## Smart Contract
 
-`blockchain/contracts/SentinelAI.sol` - deploy this to Sepolia if you want on-chain anchoring. After deployment, put the contract address in `CONTRACT_ADDRESS` in your `.env`.
+The Solidity smart contract (`SentinelAI.sol`, developed by Srijoni Ghosh) handles on-chain model anchoring on the Sepolia network. If on-chain verification is desired, deploy the Solidity contract and configure the address under `CONTRACT_ADDRESS` in your `.env` file.
 
 ## Tech Stack
 
-Python 3.8+, FastAPI, SQLite, Web3.py, React 18, Ethereum Sepolia
-
-## Built by Aniruddh Viswarajan and Srijoni Ghosh
+Python 3.8+, FastAPI, SQLite, Web3.py, Ethereum Sepolia
