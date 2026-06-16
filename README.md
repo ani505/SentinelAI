@@ -160,3 +160,5 @@ Leave `SEPOLIA_RPC_URL` and `PRIVATE_KEY` blank. The system runs in local-only m
 ## Tech Stack
 
 Python 3.8+, FastAPI, SQLite, Web3.py, React 18, Ethereum Sepolia
+
+## Built by Aniruddh Viswarajan and Srijoni Ghosh
